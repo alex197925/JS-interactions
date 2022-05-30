@@ -1,32 +1,3 @@
-# Build and Release Folders
-Skip to content
-Search or jump to…
-Pull requests
-Issues
-Marketplace
-Explore
-
-@alex197925
-alex197925
-/
-rock-paper-scissors-lizard-Spock
-Public
-Code
-Issues
-Pull requests
-Actions
-Projects
-Wiki
-Security
-Insights
-Settings
-rock-paper-scissors-lizard-Spock/.gitignore
-@alex197925
-alex197925 modified .gitignore
-Latest commit 8ecf13a 20 hours ago
- History
- 1 contributor
-308 lines (234 sloc)  5.54 KB
 
 # Build and Release Folders
 bin-debug/
