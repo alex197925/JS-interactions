@@ -113,16 +113,6 @@ img {
 }
 
 
-.btn-prev {
-    top: 45%;
-    left: 2%;
-}
-
-.btn-next {
-    top: 45%;
-    right: 2%;
-}
-
 .btn:hover {
     transform: scale(1.1);
     color: white;
