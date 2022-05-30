@@ -19,37 +19,80 @@ dark.addEventListener("click", function () {
 
 
 //Carousel
-document.querySelectorAll(".carousel").forEach(carousel => {
-    const items = carousel.querySelectorAll(".carousel__item");
-    const buttonsHtml = Array.from(items, () => {
-return `<span class="carousel__button"></span>`;
+
+//Select all slides
+const slides = document.querySelectorAll(".slide");
+
+//Loop through slides and set each slides translateX property to index * 100%
+slides.forEach((slide, index) => {
+    slide.style.transform = `translateX(${index * 100}%)`;
+})
+
+// current slide counter
+let curSlide = 0;
+
+// select next slide button
+const nextSlide = document.querySelector(".btn-next");
+
+// add event listener and next slide functionality
+nextSlide.addEventListener("click", function () {
+    curSlide++;
+
+    slides.forEach((slide, index) => {
+        slide.style.transform = `translateX(${100 * (index - curSlide)}%)`;
     });
-    carousel.insertAdjacentHTML("beforeend", `
-    <div class="carousel__button">
-    
-    ${buttonsHtml.join("")}
-    
-    </div>
-    
-    
-    `)
-
-    const buttons = carousel.querySelectorAll(".carousel__button");
-    buttons.forEach((button, i ) => {
-        button.addEventListener("click", () =>  {
-            items.forEach(item => item.classList.remove("carousel__item--selected") );
-
-            buttons.forEach(button => button.classList.remove("carousel__button--selected"));
-
-            items[i].classList.add("carousel__item--selected");
-            button.classList.add("carousel__button--selected");
-        });
-
-    });
-    items[0].classList.add("carousel__item--selected");
-    buttons.classList.add("carousel__button--selected");
 });
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// document.querySelectorAll(".carousel").forEach(carousel => {
+//     const items = carousel.querySelectorAll(".carousel__item");
+//     const buttonsHtml = Array.from(items, () => {
+// return `<span class="carousel__button"></span>`;
+//     });
+//     carousel.insertAdjacentHTML("beforeend", `
+//     <div class="carousel__button">
+//
+//     ${buttonsHtml.join("")}
+//
+//     </div>
+//
+//
+//     `)
+//
+//     const buttons = carousel.querySelectorAll(".carousel__button");
+//     buttons.forEach((button, i ) => {
+//         button.addEventListener("click", () =>  {
+//             items.forEach(item => item.classList.remove("carousel__item--selected") );
+//
+//             buttons.forEach(button => button.classList.remove("carousel__button--selected"));
+//
+//             items[i].classList.add("carousel__item--selected");
+//             button.classList.add("carousel__button--selected");
+//         });
+//
+//     });
+//     items[0].classList.add("carousel__item--selected");
+//     buttons.classList.add("carousel__button--selected");
+// });
+//
 
 
 
