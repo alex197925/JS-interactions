@@ -17,8 +17,10 @@ body{
 
 .image{
     height: 250px;
-    background: midnightblue;
+    background-color: midnightblue;
+    background-position: center;
 }
+
 
 .poke{
     font-weight: bold;
@@ -45,7 +47,7 @@ body{
 
 img {
     width: 100%;
-    height: 400px;
+    height: 100%;
     object-fit: cover;
 }
 
@@ -82,6 +84,7 @@ img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    background-position: 0px -100px;
 }
 
 
@@ -120,53 +123,9 @@ img {
 }
 
 
-/*.carousel__main {*/
-/*    position: relative;*/
-/*}*/
-
-/*.carousel__item {*/
-/*    height: 400px;*/
-/*    !*background: gray;*!*/
-/*    padding: 16px;*/
-/*    color: aliceblue;*/
-/*    display: none;*/
-/*}*/
-
-/*.carousel__item--selected {*/
-/*    display: block;*/
-/*}*/
-
-/*.carousel__nav {*/
-/*    width: 100%;*/
-/*    padding: 20px 0;*/
-/*    position: absolute;*/
-/*    bottom: 0;*/
-/*    left: 0;*/
-/*    text-align: center;*/
-/*}*/
-
-/*.carousel__button {*/
-/*    width: 10px;*/
-/*    height: 10px;*/
-/*    display: inline-block;*/
-/*    background: rgba(255, 255, 255,0.2);*/
-/*    border-radius: 50%;*/
-/*    margin: 0 5px;*/
-/*    cursor: pointer;*/
-/*}*/
-
-
-
-/*.carousel__button--selected {*/
-/*    background: rgba(255, 255, 255, 0.5);*/
-/*}*/
-
-/* End Carousel*/
-
-
 .title{
     font-size: 1.5em;
-    margin-top: 100px;
+    margin-top: 200px;
     margin-bottom: 20px;
 }
 
@@ -201,4 +160,13 @@ img {
 
 .mode:hover{
     cursor: pointer;
+}
+
+
+h1 {
+    position: absolute;
+    top: 23%;
+    left: 13%;
+    transform: translate(-50%, -50%);
+    color: white;
 }
