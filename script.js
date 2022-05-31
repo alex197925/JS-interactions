@@ -43,7 +43,35 @@ nextSlide.addEventListener("click", function () {
     });
 });
 
+// select next slide button
+let maxSlide = slides.length - 1;
 
+nextSlide.addEventListener("click",function (){
+    // check if current slide is the last and reset current slide
+    if(curSlide === maxSlide) {
+        curSlide = 0;
+    }else {
+        curSlide++;
+    }
+});
+
+// select prev slide button
+const  prevSlide = document.querySelector(".btn-prev");
+
+// add event listener and next slide functionality
+prevSlide.addEventListener("click", function (){
+    // check if current slide is the first and reset current slide to last
+    if(curSlide === 0){
+        curSlide = maxSlide;
+    }else {
+        curSlide--;
+    }
+    //   move slide by 100%
+    slides.forEach((slide, index) => {
+        slide.style.transform = `translateX(${100 * (index - curSlide)}%)`;
+    });
+
+});
 
 
 
