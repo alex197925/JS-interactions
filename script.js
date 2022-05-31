@@ -19,59 +19,43 @@ dark.addEventListener("click", function () {
 
 
 //Carousel
+const allCarouselImg = ["./images/colton-duke-UExx0KnnkjY-unsplash.jpg",
+    "./images/florian-wehde-J6mySj3wntg-unsplash.jpg",
+    ".images/nik-shuliahin-kegWoCHJzGY-unsplash.jpg",
+    "./images/luca-bravo-_QdFx92MO2U-unsplash.jpg",
+    ".images/paulo-silva-5oO1xH5h8kQ-unsplash.jpg"];
 
-//Select all slides
-const slides = document.querySelectorAll(".slide");
 
-//Loop through slides and set each slides translateX property to index * 100%
-slides.forEach((slide, index) => {
-    slide.style.transform = `translateX(${index * 100}%)`;
-})
+let carousel = document.getElementById("carouselContainer");
+let counter = 0;
 
-// current slide counter
-let curSlide = 0;
+carousel.style.backgroundImage = `url(${allCarouselImg[counter]})`
+carousel.style.backgroundRepeat = `no-repeat`
+carousel.style.backgroundSize = 'cover';
+carousel.style.backgroundAttachment = 'fixed';
 
-// select next slide button
-const nextSlide = document.querySelector(".btn-next");
+setInterval(nextPicture,3000)
 
-// add event listener and next slide functionality
-nextSlide.addEventListener("click", function () {
-    curSlide++;
-
-    slides.forEach((slide, index) => {
-        slide.style.transform = `translateX(${100 * (index - curSlide)}%)`;
-    });
-});
-
-// select next slide button
-let maxSlide = slides.length - 1;
-
-nextSlide.addEventListener("click",function (){
-    // check if current slide is the last and reset current slide
-    if(curSlide === maxSlide) {
-        curSlide = 0;
-    }else {
-        curSlide++;
+function nextPicture() {
+    if (counter < allCarouselImg.length - 1) {
+        counter++
+        carousel.style.backgroundImage = `url(${allCarouselImg[counter]})`
+    } else {
+        counter = 0;
+        carousel.style.backgroundImage = `url(${allCarouselImg[counter]})`
     }
-});
+}
 
-// select prev slide button
-const  prevSlide = document.querySelector(".btn-prev");
 
-// add event listener and next slide functionality
-prevSlide.addEventListener("click", function (){
-    // check if current slide is the first and reset current slide to last
-    if(curSlide === 0){
-        curSlide = maxSlide;
-    }else {
-        curSlide--;
-    }
-    //   move slide by 100%
-    slides.forEach((slide, index) => {
-        slide.style.transform = `translateX(${100 * (index - curSlide)}%)`;
-    });
+//Collage
+const allCollageImg = document.querySelectorAll(".image");
+console.log(allCollageImg);
 
-});
+for (let i = 0; i < allCollageImg.length; i++) {
+    console.log(i);
+
+
+}
 
 
 
