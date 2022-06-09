@@ -105,9 +105,47 @@ imagesArray.forEach(function (singleImage) {
             </div>
         </article>`
 
-    console.log(imagesArray);
+    // console.log(imagesArray);
 
 });
+
+
+//Pokemon's
+
+
+//Pidgeot
+let pokeImage = "./images/poke.png";
+
+const poke = document.querySelector(".poke");
+// console.log(poke);
+poke.addEventListener("mouseover", function (e){
+    // console.log(pokeImage);
+    e.target.img = pokeImage;
+})
+
+
+
+
+let circle = document.querySelector(".chaser");
+
+let mouseMovementStoppedTimer;
+const mouseMovementStopped = function() {
+    circle.style.opacity = 0;
+}
+
+window.addEventListener('mousemove', (function(e) {
+    // Make the cursor visible immediately
+    circle.style.opacity = 1;
+
+    // Change position of cursor only when mousemove is detected
+    setTimeout(() => {
+        // Change cursor position using translate, clientX & clientY
+        circle.style.transform =  `translate(${e.clientX}px, ${e.clientY}px)`;
+    }, 100);
+
+    clearTimeout(mouseMovementStoppedTimer);
+    mouseMovementStoppedTimer = setTimeout(mouseMovementStopped, 200);
+}));
 
 
 
