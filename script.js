@@ -51,13 +51,14 @@ function nextPicture() {
 
 //Collage
 const collageImg = document.querySelectorAll(".collageImage");
-console.log(collageImg);
-
+// console.log(collageImg);
 
 
 function zoomInImage (img) {
-    img.style.transform = "scale(1.5)";
+    img.style.transform = "scale(1.1)";
     img.style.transition =  "transform 0.25s ease";
+    img.style.width = "100%";
+
 }
 
 function zoomInReset (img) {
@@ -70,6 +71,8 @@ function zoomInReset (img) {
 for (let i = 0; i < collageImg.length; i++) {
     collageImg[i].addEventListener("click", function (){
         zoomInImage(collageImg[i]);
+        const image1 = document.getElementById("img1");
+        image1.innerHTML = htmlCode;
     })
 }
 
@@ -78,6 +81,34 @@ for (let i = 0; i < collageImg.length; i++) {
         zoomInReset(collageImg[i]);
     })
 }
+
+const imagesArray = [
+    {
+        id: 1,
+        description:" Me on the stage",
+        title: "Concert"
+    }
+]
+
+
+let htmlCode = ``;
+
+
+
+imagesArray.forEach(function (singleImage) {
+    htmlCode =
+        htmlCode + ` 
+ <article>
+            <div>
+                <h3>${singleImage.title}</h3>
+                <h3>${singleImage.description}</h3>
+            </div>
+        </article>`
+
+    console.log(imagesArray);
+
+});
+
 
 
 
